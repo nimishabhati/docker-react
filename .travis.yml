@@ -6,4 +6,4 @@ before_install:
   - docker build -t nimishab -f Dockerfile.dev .
 
 script:
-  - docker run nimishab npm run test -- -- coverage
+  - docker run nimishab npm run test -- --coverage
