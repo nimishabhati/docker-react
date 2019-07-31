@@ -9,7 +9,7 @@ script:
   - docker run -e CI=true nimishab npm run test
 
 deploy:
-  provider: elasticneanstalk
+  provider: elasticbeanstalk
   region: "us-east-2"
   app: "docker"
   env: "Docker-env"
