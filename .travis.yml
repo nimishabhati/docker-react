@@ -7,3 +7,18 @@ before_install:
 
 script:
   - docker run -e CI=true nimishab npm run test
+
+deploy:
+  provider: elasticneanstalk
+  region: "us-east-2"
+  app: "docker"
+  env: "Docker-env"
+  bucket_name: "elasticbeanstalk-us-east-2-051377309591"
+  bucket_path: "docker"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"  
+
+
